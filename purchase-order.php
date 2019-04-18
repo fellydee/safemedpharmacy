@@ -8,6 +8,8 @@
     $sku = $_SESSION['result']['SKU'];
     // $sku = $_POST['sku'];
 
+    // For testing purposes
+
     if(!$_SESSION['username']) {
         header("Location: login.php");
     }
