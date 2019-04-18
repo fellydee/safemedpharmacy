@@ -370,7 +370,7 @@
                 <div class="card shadow mb-4">
                   <div class="card-body">
                     <div class="box-body">
-                      <form class="form" action="add-purchase-order-process.php" method="post">
+                      <form class="form" action="purchase-order.php" method="post">
                         <div class="form-group">
                           <label>SKU</label>
                           <!-- <form action="add-purchase-order-process.php" method="post"> -->

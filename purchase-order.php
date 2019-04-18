@@ -451,7 +451,7 @@
                       <td><center>
                       <form method = "POST" class="form control_button" action ="move-purchase-order.php">
                         <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
-                        <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
+                        <input type= "hidden" name = "sku" value ="<?php echo $_POST['sku']; ?>"/>
                         <input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
                         <input type= "hidden" name = "generic_name" value ="<?php echo $row['generic_name']; ?>"/>
                         <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-share fa-sm text-white-50"></i> Move</button>
