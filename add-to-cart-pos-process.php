@@ -1,0 +1,54 @@
+<?php
+$connect=mysqli_connect('localhost','root','','safemedpharmacy');
+
+			$item_id = mysqli_real_escape_string($connect,$_POST['item_id']);
+			$brand_name = mysqli_real_escape_string($connect,$_POST['brand_name']);
+			$generic_name = mysqli_real_escape_string($connect,$_POST['generic_name']);
+			$quantity = mysqli_real_escape_string($connect,$_POST['quantity']);
+			$selling_price = mysqli_real_escape_string($connect,$_POST['selling_price']);
+
+			date_default_timezone_set('Asia/Manila');
+			$date_added = date('Y-m-j');
+			
+			if(isset($_POST['discount']) && $_POST['discount']==='yes') {
+				$price = $quantity * $selling_price;
+				$vat_exempt = $price / 1.12;
+				$discount = $vat_exempt * .20;
+				$final_price = $price - $discount;
+				$vat = 0;
+
+			$query = "INSERT INTO dim_orders (item_id, brand_name, generic_name, quantity, discount, price, vat, vat_exempt, date_added) 
+			VALUES ('$item_id', '$brand_name', '$generic_name', '$quantity', '$discount', '$final_price', '$vat', '$vat_exempt', '$date_added')";
+
+			}
+
+			else {
+				$price = $quantity * $selling_price;
+				$vat_exempt = $price / 1.12;
+				$vat = $price - $vat_exempt;
+
+			$query = "INSERT INTO dim_orders (item_id, brand_name, generic_name, quantity, price, vat, vat_exempt, date_added) 
+			VALUES ('$item_id', '$brand_name', '$generic_name', '$quantity', '$price', '$vat', '$vat_exempt', '$date_added')";
+
+			}
+
+			$query1 = "UPDATE dim_inventory set
+			order_qty = order_qty - $quantity
+			WHERE item_id = $item_id";
+
+			if(mysqli_query($connect, $query)){
+				if(mysqli_query($connect, $query1)){
+			header( "Location: pos.php" ); die;
+			echo "<script>window.open('pos.php','_self')</script>";
+				}
+			}
+			if(mysqli_connect_errno($connect))
+			{
+				echo 'Failed to connect';
+			}
+		
+			
+?>
+
+			<!-- $transaction = "SELECT MAX(transaction_id)+1 FROM dim_orders"; -->
+			<!-- $transaction_id = mysqli_query($connect, $transaction); -->
