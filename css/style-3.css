@@ -1,4 +1,4 @@
-/* This stylesheet is applied to archive.php and categories.php */
+/* This stylesheet is applied to expired.php and near-expiry.php */
 
 <style>
   .sidebar {
@@ -24,10 +24,9 @@
     font-size: .80rem;
   }
   .dt-buttons {
-    float: right;
-    margin-left: 4px;
+    float: left;
   }
-  .dt-buttons button {
+   .dt-buttons button {
     display:inline-block;
     font-weight:400;
     font-size: .875rem;
@@ -54,9 +53,6 @@
   .dataTables_paginate {
     float: right;
   }
-  .control_button {
-    display: inline-block;
-  }
   #dataTable_filter {
     position: absolute;
     right: 20px;
@@ -76,7 +72,7 @@
     position: relative;
     z-index: 0;
     overflow: hidden;
-    padding: 0.5rem 0.7rem;
+    padding: 0.5rem 0.6rem;
     display: inline-block;
     margin: 0px 0px -8px 15px;
   }
