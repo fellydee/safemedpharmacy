@@ -5,10 +5,11 @@
     $connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
     session_start();
 
-    $sku = $_SESSION['result']['SKU'];
-    // $sku = $_POST['sku'];
+//     print_r($_POST);
+// die();
 
-    // For testing purposes
+   $sku = $_SESSION['result']['SKU'];
+    // $sku = $_POST['sku'];
 
     if(!$_SESSION['username']) {
         header("Location: login.php");
@@ -448,18 +449,40 @@
                     <td><?php echo $row['status']; ?></td>
             
 
-                      <td><center>
+                  <td><center>
                       <form method = "POST" class="form control_button" action ="move-purchase-order.php">
-                        <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
                         <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
                         <input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
-                        <input type= "hidden" name = "generic_name" value ="<?php echo $row['generic_name']; ?>"/>
+                        <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
+                        <input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
+                        <input type= "hidden" name = "uom" value ="<?php echo $row['uom']; ?>"/>
+                        <input type= "hidden" name = "defective_qty" value ="<?php echo $row['defective_qty']; ?>"/>
+                        <input type= "hidden" name = "unit_price" value ="<?php echo $row['unit_price']; ?>"/>
+
+                          <input type= "hidden" name = "generic_name" value ="<?php echo $row['generic_name']; ?>"/>
+                        <input type= "hidden" name = "category" value ="<?php echo $row['category']; ?>"/>
+                        <input type= "hidden" name = "order_qty" value ="<?php echo $row['order_qty']; ?>"/>
+                        <input type= "hidden" name = "expiration_date" value ="<?php echo $row['expiration_date']; ?>"/>
+                        <input type= "hidden" name = "selling_price" value ="<?php echo $row['selling_price']; ?>"/>
+
                         <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-share fa-sm text-white-50"></i> Move</button>
                       </form>
+
                       <form method = "POST" class="form control_button" action ="delete-purchase-order-process.php">
+                           <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
+                        <input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
                         <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
-                        <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Cancel</button>
-                      </form></center></td>             
+                        <input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
+                        <input type= "hidden" name = "uom" value ="<?php echo $row['uom']; ?>"/>
+                        <input type= "hidden" name = "defective_qty" value ="<?php echo $row['defective_qty']; ?>"/>
+                        <input type= "hidden" name = "unit_price" value ="<?php echo $row['unit_price']; ?>"/>
+
+                          <input type= "hidden" name = "generic_name" value ="<?php echo $row['generic_name']; ?>"/>
+                        <input type= "hidden" name = "category" value ="<?php echo $row['category']; ?>"/>
+                        <input type= "hidden" name = "order_qty" value ="<?php echo $row['order_qty']; ?>"/>
+                        <input type= "hidden" name = "expiration_date" value ="<?php echo $row['expiration_date']; ?>"/>
+                        <input type= "hidden" name = "selling_price" value ="<?php echo $row['selling_price']; ?>"/>
+                        <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Cancel</button>          
                     </tr><?php } ?>
                   </tbody>
                 </table>

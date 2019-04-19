@@ -1,10 +1,10 @@
 <?php
 $connect=mysqli_connect('localhost','root','','safemedpharmacy');
 
-           	$item_id = $_POST['item_id'];
+           	$sku = $_POST['sku'];
 
 			$query = "DELETE FROM dim_inventory 
-			WHERE item_id = '$item_id'";
+			WHERE sku = '$sku'";
 
 			if(mysqli_query($connect, $query)){
 			header( "Location: purchase-order.php" ); die;
