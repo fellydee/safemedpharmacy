@@ -1,3 +1,11 @@
+<!-- 
+The following files use this sidebar.php template:
+- add-purchase-order.php
+- move-purchase-order.php
+- purchase-order.php
+- sku-process.php
+ -->
+ 
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
