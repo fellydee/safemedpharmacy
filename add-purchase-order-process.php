@@ -1,7 +1,10 @@
 <?php
 $connect=mysqli_connect('localhost','root','','safemedpharmacy');
-print_r($_POST);
-die();
+// print_r($_POST);
+// die();
+ 
+ // $sku = $_SESSION['result']['sku'];
+ $sku = $_POST['sku'];
 
 			$name = mysqli_real_escape_string($connect,$_POST['name']);
 			$sku = mysqli_real_escape_string($connect,$_POST['sku']);
@@ -14,8 +17,6 @@ die();
             $order_qty = mysqli_real_escape_string($connect,$_POST['order_qty']); 
 			
 
-
-		
 
 			date_default_timezone_set('Asia/Manila');
 			$date_today = date('Y-m-j');

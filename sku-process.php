@@ -1,3 +1,8 @@
+<!-- Suggest removing this page -->
+<!-- Once user searches for SKU, must form-action into sku-process.php, then header
+redirect to add-purchase-process.php, but this time enable the fields and display
+the session variable values. -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,8 +70,8 @@
             fclose($handle);
         } else {
             echo "Could not open file: " . $file;
-        }
-    }
+      }
+   }
 
 
 
@@ -93,99 +98,7 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-  <style>
-  .sidebar {
-    width: 16rem !important;
-  }
-  .bg-gradient-primary {
-    background-color: #222d32;
-    background-image: none !important;
-  }
-  .sidebar .nav-item .nav-link {
-    width: 16em;
-  }
-  .sidebar .sidebar-brand {
-    height: 9rem;
-  }
-  #dataTable tr td {
-    vertical-align: middle;
-  }
-  .quantity-column {
-    display: inline-block;
-  }
-  #dataTable_wrapper, .table-responsive {
-    font-size: .80rem;
-  }
-  .submit-footer {
-    text-align: right;
-  }
-
-  /* Quantity indicator */
-  .sonar-wrapper {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    padding: 0.5rem 0.7rem;
-    display: inline-block;
-    margin: 0px 0px -8px 15px;
-  }
-  .sonar-emitter-goodqty {
-    position: relative;
-    margin: 0 auto;
-    width: 10px;
-    height: 10px;
-    border-radius: 9999px;
-    background-color: #0e9e0e;
-  }
-  .sonar-emitter-badqty {
-    position: relative;
-    margin: 0 auto;
-    width: 10px;
-    height: 10px;
-    border-radius: 9999px;
-    background-color: HSL(45,100%,50%);
-  }
-  .sonar-wave-goodqty {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    background-color: #0e9e0e;
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-  } 
-  .sonar-wave-badqty {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    background-color: HSL(45,100%,50%);
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
-  .sonar-wave-goodqty {
-    animation: sonarWave 2s linear infinite;
-  }
-  .sonar-wave-badqty {
-    animation: sonarWave 2s linear infinite;
-  }
-
-  @keyframes sonarWave {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      transform: scale(3);
-      opacity: 0;
-      }
-    }
-  </style>
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -370,25 +283,25 @@
                 <div class="card shadow mb-4">
                   <div class="card-body">
                     <div class="box-body">
-                      <form class="form" action="purchase-order.php" method="post">
+                      <form class="form" action="add-purchase-order-process.php" method="post">
                         <div class="form-group">
                           <label>SKU</label>
                           <!-- <form action="add-purchase-order-process.php" method="post"> -->
-                          <input type="text" class="form-control" name="sku" value="<?php echo $sku;?>" disabled>
+                          <input type="text" class="form-control" name="sku" value="<?php echo $sku;?>" readonly>
                         <!-- </form> -->
                         </div>
                        
                         <div class="form-group">
                           <label>Brand Name</label>
-                          <input type="text" class="form-control" name="brand_name" value="<?php echo $_SESSION['result']['Brand Name'];?>" disabled>
+                          <input type="text" class="form-control" name="brand_name" value="<?php echo $_SESSION['result']['Brand Name'];?>" readonly>
                         </div>
                         <div class="form-group">
                           <label>Supplier</label>
-                          <input type="text" class="form-control" name="supplier" value="<?php echo $_SESSION['result']['Supplier'];?>" disabled>
+                          <input type="text" class="form-control" name="supplier" value="<?php echo $_SESSION['result']['Supplier'];?>" readonly>
                         </div>
                         <div class="form-group">
                           <label>Unit of Measurement</label>
-                          <input type="text" class="form-control" name="uom" value="<?php echo $_SESSION['result']['Uom'];?>" disabled>
+                          <input type="text" class="form-control" name="uom" value="<?php echo $_SESSION['result']['Uom'];?>" readonly>
                         </div>                        
                         <div class="form-group">
                           <label>Defective Quantity</label>
@@ -396,7 +309,7 @@
                         </div>  
                         <div class="form-group">
                           <label>Unit Price</label>
-                          <input type="text" class="form-control" name="unit_price" value="<?php echo $_SESSION['result']['Unit Price'];?>" disabled>
+                          <input type="text" class="form-control" name="unit_price" value="<?php echo $_SESSION['result']['Unit Price'];?>" readonly>
                         </div>
                     </div>
                       <!-- /.box-body -->
@@ -411,22 +324,22 @@
                       <div class="box-body">
                         <div class="form-group">
                           <label>Generic Name</label>
-                          <input type="text" class="form-control" name="generic_name" value="<?php echo $_SESSION['result']['Generic Name'];?>" disabled>
+                          <input type="text" class="form-control" name="generic_name" value="<?php echo $_SESSION['result']['Generic Name'];?>" readonly>
                         </div>
                          <div class="form-group">
                           <label>Category</label>
-                          <input type="text" class="form-control" name="category" value="<?php echo $_SESSION['result']['Category'];?>" disabled>
+                          <input type="text" class="form-control" name="category" value="<?php echo $_SESSION['result']['Category'];?>" readonly>
                         <div class="form-group">
                           <label>Order Quantity</label>
                           <input type="text" class="form-control" name="order_qty" value="" required>
                         </div>
                         <div class="form-group">
                           <label>Expiration Date</label>
-                          <input type="text" class="form-control" name="expiration_date" value="<?php echo $_SESSION['result']['Expiry Date'];?>" disabled>
+                          <input type="text" class="form-control" name="expiration_date" value="<?php echo $_SESSION['result']['Expiry Date'];?>" readonly>
                         </div>  
                         <div class="form-group">
                           <label>Selling Price</label>
-                          <input type="text" class="form-control" name="selling_price" value="<?php echo $_SESSION['result']['Selling Price'];?>" disabled>
+                          <input type="text" class="form-control" name="selling_price" value="<?php echo $_SESSION['result']['Selling Price'];?>" readonly>
                         </div>     
                       </div>
                   </div>
@@ -435,7 +348,6 @@
                   <input type= "hidden" name = "name" value ="<?php echo $name ?>"/>
                   
                   <div class="submit-footer">
-                    <!-- <form action="add-purchase-order-process.php" method="post"> -->
                     <input type="submit" class="btn btn-primary" value="Submit" name="submit" />
                     <a href="purchase-order.php" class="btn btn-primary">Cancel</a>
                   </div>
