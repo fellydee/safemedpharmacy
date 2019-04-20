@@ -258,9 +258,9 @@
                    <input type="hidden" name="generic_name" value="<?php echo $row['generic_name']; ?>">
                     <input type="hidden" name="uom" value="<?php echo $row['uom']; ?>">
                     <input type="hidden" name="category" value="<?php echo $row['category']; ?>">
-                    <!-- <input type="hidden" name="expiration_date" value="<?php echo $row['expiration_date']; ?>"> -->
-                     <!-- <input type="hidden" name="unit_price" value="<?php echo $row['unit_price']; ?>"> -->
-                    <!-- <input type="hidden" name="selling_price" value="<?php echo $row['selling_price']; ?>"> -->
+                    <input type="hidden" name="expiration_date" value="<?php echo $row['expiration_date']; ?>">
+                    <input type="hidden" name="unit_price" value="<?php echo $row['unit_price']; ?>">
+                    <input type="hidden" name="selling_price" value="<?php echo $row['selling_price']; ?>">
                  
                   <div class="submit-footer">
                     <input type="submit" class="btn btn-primary" value="Submit" name="submit" />
