@@ -308,7 +308,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Purchase Order</h1>
-            <div class="action-buttons"><a href="add-purchase-order.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>  Add Record</a> </div>
+            <div class="action-buttons"><a href="add-purchase-order-search-product.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>  Add Record</a> </div>
           </div>
 
           <div class="card shadow mb-4">
