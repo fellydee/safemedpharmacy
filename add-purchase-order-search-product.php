@@ -118,6 +118,12 @@
             <h1 class="h3 mb-0 text-gray-800">Add New Purchase Order</h1>
           </div>
 
+        <?php if ($_SESSION['productFound'] === false): ?>
+          <div class="alert alert-danger col-lg-4" role="alert">
+            Product with SKU: <?php echo $_SESSION['sku']; ?> not found - please try again.
+          </div>
+        <?php endif; ?>
+
         <form class="form-inline" action="find-sku.php" method="post">
           <div class="form-group mx-sm-3 mb-2">
             <label for="productSKU" class="sr-only">Product SKU</label>
