@@ -15,7 +15,15 @@
     }
 
     $result = $_SESSION['result'];
-    $productFound = $_SESSION['productFound'];
+
+    // Clear session variable
+    if (isset($_SESSION['sku'])) {
+      unset($_SESSION['sku']);
+    }
+
+    if (isset($_SESSION['productFound'])) {
+      unset($_SESSION['productFound']);
+    }
 ?>
 
 <head>
