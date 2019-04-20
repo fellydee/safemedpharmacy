@@ -26,8 +26,6 @@
       <div id="collapseTwo" class="collapse <?php echo is_nav_active($items) ? 'show' : ''; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item <?php echo is_nav_item_active('inventory')?>" href="inventory.php">Inventory</a>
-          <a class="collapse-item <?php echo is_nav_item_active('categories')?>" href="categories.php">Categories</a>
-          <a class="collapse-item <?php echo is_nav_item_active('suppliers')?>" href="suppliers.php">Suppliers</a>
         </div>
       </div>
     </li>
