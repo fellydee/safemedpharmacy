@@ -39,6 +39,12 @@
 	}
 
 	$_SESSION['productFound'] = $productFound;
+	$_SESSION['sku'] = $_POST['sku'];
+
+	if ( $productFound === false ) {
+		header('Location: add-purchase-order-search-product.php');
+		die();
+	}
 
 	header('Location: add-purchase-order.php');
 	die();

@@ -15,6 +15,7 @@
     }
 
     $result = $_SESSION['result'];
+    $productFound = $_SESSION['productFound'];
 ?>
 
 <head>
