@@ -119,7 +119,7 @@
           </div>
 
         <?php if ($_SESSION['productFound'] === false): ?>
-          <div class="alert alert-danger col-lg-4" role="alert">
+          <div class="alert alert-danger col-lg-5" role="alert">
             Product with SKU: <?php echo $_SESSION['sku']; ?> not found - please try again.
           </div>
         <?php endif; ?>
