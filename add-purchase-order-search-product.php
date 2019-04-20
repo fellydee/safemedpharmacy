@@ -13,8 +13,6 @@
         $name = $_SESSION['name'];
         $login_type = $_SESSION['login_type'];
     }
-
-    $result = $_SESSION['result'];
 ?>
 
 <head>
@@ -120,80 +118,13 @@
             <h1 class="h3 mb-0 text-gray-800">Add New Purchase Order</h1>
           </div>
 
-          <form class="form" action="add-purchase-order-process.php" method="post">
-            <div class="row">
-              <div class="col-lg-6">
-            <div class="card shadow mb-4">
-              <div class="card-body">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label>SKU</label>
-                    <input type="text" class="form-control" name="sku" value="<?php echo $result['SKU'] ?>" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label>Brand Name</label>
-                    <input type="text" class="form-control" name="brand_name" value="<?php echo $result['Brand Name'] ?>" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label>Supplier</label>
-                    <input type="text" class="form-control" name="supplier" value="<?php echo $result['Supplier'] ?>" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label>Unit of Measurement</label>
-                    <input type="text" class="form-control" name="uom" value="<?php echo $result['Uom'] ?>" readonly>
-                  </div>                        
-                  <div class="form-group">
-                    <label>Defective Quantity</label>
-                    <input type="text" class="form-control" name="defective_qty" value="0">
-                  </div>  
-                  <div class="form-group">
-                    <label>Unit Price</label>
-                    <input type="text" class="form-control" name="unit_price" value="<?php echo $result['Unit Price'] ?>" readonly>
-                  </div>
-                </div>
-                <!-- /.box-body -->
-              </div>
-            </div>
+        <form class="form-inline" action="find-sku.php" method="post">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="productSKU" class="sr-only">Product SKU</label>
+            <input type="number" class="form-control" id="productSKU" placeholder="Input product SKU..." name="sku">
           </div>
-
-          <!-- Border Bottom Utilities -->
-          <div class="col-lg-6">
-            <div class="card shadow mb-4">
-              <div class="card-body">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label>Generic Name</label>
-                    <input type="text" class="form-control" name="generic_name" value="<?php echo $result['Generic Name'] ?>" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label>Category</label>
-                    <input type="text" class="form-control" name="category" value="<?php echo $result['Category'] ?>" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label>Order Quantity</label>
-                    <input type="text" class="form-control" name="order_qty" value="">
-                  </div>
-                  <div class="form-group">
-                    <label>Expiration Date</label>
-                    <input type="text" class="form-control" name="expiration_date" value="<?php echo $result['Expiry Date'] ?>" readonly>
-                  </div>  
-                  <div class="form-group">
-                    <label>Selling Price</label>
-                    <input type="text" class="form-control" name="selling_price" value="<?php echo $result['Selling Price'] ?>" readonly>
-                  </div>     
-                </div>
-              </div>
-            </div>
-
-            <input type= "hidden" name = "name" value ="<?php echo $name ?>"/>
-            <div class="submit-footer">
-              <input type="submit" class="btn btn-primary" value="Submit" name="submit" />
-              <a href="purchase-order.php" class="btn btn-primary">Cancel</a>
-            </div>
-          </div>
-
-        </div>
-      </form>
+          <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
 
         </div>
       <!-- End of Main Content -->
