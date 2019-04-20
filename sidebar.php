@@ -3,7 +3,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
     <div class="sidebar-brand-text mx-3"><img src="logo_transparent.png" width='260' /></div>
   </a>
 
@@ -56,6 +56,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item <?php echo is_nav_item_active('purchase-order')?>" href="purchase-order.php">Purchase Order</a>
           <a class="collapse-item <?php echo is_nav_item_active('purchase-invoice')?>" href="purchase-invoice.php">Purchase Invoice</a>
+          <a class="collapse-item <?php echo is_nav_item_active('stock-card')?>" href="stock-card.php">Stock Card</a>
         </div>
       </div>
     </li>
