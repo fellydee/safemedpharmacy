@@ -376,7 +376,7 @@
                       </form>
 
                       <form method = "POST" class="form control_button" action ="delete-purchase-order-process.php">
-                           <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
+                        <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
                         <input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
                         <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
                         <input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
@@ -389,7 +389,7 @@
                         <input type= "hidden" name = "order_qty" value ="<?php echo $row['order_qty']; ?>"/>
                         <input type= "hidden" name = "expiration_date" value ="<?php echo $row['expiration_date']; ?>"/>
                         <input type= "hidden" name = "selling_price" value ="<?php echo $row['selling_price']; ?>"/>
-                        <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Cancel</button>          
+                        <button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Cancel</button></form>          
                     </tr><?php } ?>
                   </tbody>
                 </table>
