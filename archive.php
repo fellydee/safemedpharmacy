@@ -5,6 +5,10 @@
     $connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
     session_start();
 
+
+//         print_r($_POST);
+// die();
+
     if(!$_SESSION['username']) {
         header("Location: login.php");
     }
@@ -132,7 +136,7 @@
                 <div class="mb-2">
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body">
-                      <span style="font-size: 0.80rem;">All archived accounts of employees are displayed in this section. Accounts can still be reactivated.</span>
+                      <span style="font-size: 0.80rem;">All archived accounts of employees are displayed in this section. Deletion of data should be at least after a year. </span>
                     </div>
                   </div>
                 </div>
@@ -145,7 +149,7 @@
                       <th width="20%">Username</th>
                       <th width="20%">Employee Name</th>
                       <th width="20%">User Type</th>                        
-                      <th width="15%" class="controls">Controls</th>
+                      <th width="10%" class="controls">Controls</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -164,12 +168,15 @@
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['login_type']; ?></td>
                       <td class="controls">
-                        <form class="form control_button" action="edit-user-account.php?id=<?php echo $row['id']; ?>" method="post">
+                       <!--  <form class="form control_button" action="edit-user-account.php?id=<?php echo $row['id']; ?>" method="post">
                           <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit fa-sm text-white-50"></i> Edit</button>
                           <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/>
-                        </form>
-                        <form class="form control_button" action="reactivate-user-account-process.php" method="post">
+                        </form> -->
+                        <!-- <form class="form control_button" action="reactivate-user-account-process.php" method="post">
                           <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Reactivate</button>
+                          <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/> -->
+                          <form class="form control_button" action="delete-user-account-process.php" method="post">
+                          <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Delete</button>
                           <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/>
                         </form>
                       </td>                      
