@@ -21,6 +21,7 @@ $purchases = array(
   , "move-purchase-order"
   , "purchase-order"
   , "purchase-invoice"
+  , "stock-card"
   , "sku-process"
 );
 
