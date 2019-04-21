@@ -146,7 +146,7 @@
                         </div>                        
                         <div class="form-group">
                           <label>Defective Quantity</label>
-                          <input type="text" class="form-control" name="defective_qty" value="" >
+                          <input type="text" class="form-control" name="defective_qty" value="0" >
                         </div>  
                         <div class="form-group">
                           <label>Unit Price</label>
