@@ -37,6 +37,7 @@
 
   <link href="css/style-3.css" rel="stylesheet">
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body id="page-top">

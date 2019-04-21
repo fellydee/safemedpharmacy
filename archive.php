@@ -45,6 +45,7 @@
 
   <link href="css/style-2.css" rel="stylesheet">
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body id="page-top">
