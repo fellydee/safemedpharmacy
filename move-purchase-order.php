@@ -129,28 +129,28 @@
                         ?>
                         <div class="form-group">
                         <label>SKU</label>
-                        <input disabled="disabled" type="text" class="form-control" name="sku" value="<?php echo $row['sku']; ?>">
+                        <input readonly type="text" class="form-control" name="sku" value="<?php echo $row['sku']; ?>">
                         </div>
                         <div class="form-group">
                           <label>Brand Name</label>
-                          <input disabled="disabled" type="text" class="form-control" name="brand_name" value="<?php echo $row['brand_name']; ?>">
+                          <input readonly type="text" class="form-control" name="brand_name" value="<?php echo $row['brand_name']; ?>">
                         </div>
                         <div class="form-group">
                           <label>Supplier</label>
                           <!-- <input type="text" class="form-control" name="supplier" value=""> -->
-                          <input disabled="disabled" type="text" class="form-control" name="supplier" value="<?php echo $row['supplier']; ?>">
+                          <input readonly type="text" class="form-control" name="supplier" value="<?php echo $row['supplier']; ?>">
                         </div>
                         <div class="form-group">
                           <label>Unit of Measurement</label>
-                          <input disabled="disabled" type="text" class="form-control" name="uom" value="<?php echo $row['uom']; ?>">
+                          <input readonly type="text" class="form-control" name="uom" value="<?php echo $row['uom']; ?>">
                         </div>                        
                         <div class="form-group">
                           <label>Defective Quantity</label>
-                          <input type="text" class="form-control" name="defective_qty" value="" >
+                          <input type="text" class="form-control" name="defective_qty" value="0" >
                         </div>  
                         <div class="form-group">
                           <label>Unit Price</label>
-                          <input disabled="disabled" type="text" class="form-control" name="unit_price" value="<?php echo $row['unit_price']; ?>" >
+                          <input readonly type="text" class="form-control" name="unit_price" value="<?php echo $row['unit_price']; ?>" >
                         </div>
                     </div>
                       <!-- /.box-body -->
@@ -165,24 +165,24 @@
                       <div class="box-body">
                         <div class="form-group">
                           <label>Generic Name</label>
-                          <input disabled="disabled" type="text" class="form-control" name="generic_name" value="<?php echo $row['generic_name']; ?>">
+                          <input readonly type="text" class="form-control" name="generic_name" value="<?php echo $row['generic_name']; ?>">
                         </div>
                         <div class="form-group">
                           <label>Category</label>
                           <!-- <input type="text" class="form-control" name="category" value=""> -->
-                          <input disabled="disabled" type="text" class="form-control" name="category" value="<?php echo $row['category']; ?>">
+                          <input readonly type="text" class="form-control" name="category" value="<?php echo $row['category']; ?>">
                         </div>
                          <div class="form-group">
                           <label>Order Quantity</label>
-                          <input disabled="disabled" type="text" class="form-control" name="order_qty" value="<?php echo $row['order_qty']; ?>">
+                          <input readonly type="text" class="form-control" name="order_qty" value="<?php echo $row['order_qty']; ?>">
                         </div>      
                         <div class="form-group">
                           <label>Expiration Date</label>
-                          <input disabled="disabled" type="text" class="form-control" name="expiration_date" value="<?php echo $row['expiration_date']; ?> ">
+                          <input readonly type="text" class="form-control" name="expiration_date" value="<?php echo $row['expiration_date']; ?> ">
                         </div>  
                         <div class="form-group">
                           <label>Selling Price</label>
-                         <input disabled="disabled" type="text" class="form-control" name="selling_price" value="<?php echo $row['selling_price']; ?> ">
+                         <input readonly type="text" class="form-control" name="selling_price" value="<?php echo $row['selling_price']; ?> ">
                         </div>    
                       </div>
                   </div>
