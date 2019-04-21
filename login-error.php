@@ -18,6 +18,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body class="bg-gradient-primary">

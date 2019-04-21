@@ -2,11 +2,11 @@
 
 Insert project description here...
 
-## Download and Installation
+## Download and Installation (as a contributor)
 
 To begin using this, choose one of the following options to get started:
 
--  Fork this repo (insert forking instructions here)
+-  Fork this repo (follow forking guide [here](https://help.github.com/en/articles/fork-a-repo))
 
 ## Usage
 

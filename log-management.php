@@ -183,6 +183,7 @@
     }
   </style>
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body id="page-top">

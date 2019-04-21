@@ -23,8 +23,9 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
- <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body id="page-top">

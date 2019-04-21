@@ -100,6 +100,7 @@ the session variable values. -->
 
   <link href="css/style.css" rel="stylesheet">
 
+  <?php include('head-actions.php'); ?>
 </head>
 
 <body id="page-top">
