@@ -116,7 +116,7 @@
           </div>
         <?php endif; ?>
 
-        <form class="form-inline" action="find-sku.php" method="post">
+        <form class="form-inline" action="search-by-sku.php" method="post">
           <div class="form-group mx-sm-3 mb-2">
             <label for="productSKU" class="sr-only">Product SKU</label>
             <input type="number" class="form-control" id="productSKU" placeholder="Input product SKU..." name="sku">
