@@ -1,19 +1,7 @@
+<?php include('stock-card-process.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-    $connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
-    session_start();
-
-    if(!$_SESSION['username']) {
-        header("Location: login.php");
-    }
-    else {
-        $username = $_SESSION['username'];
-        $name = $_SESSION['name'];
-        $login_type = $_SESSION['login_type'];
-    }
-?>
 
 <head>
 
@@ -26,7 +14,7 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
- <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <?php include('head-actions.php'); ?>
 </head>
@@ -55,7 +43,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">View Stock Card by SKU</h1>
+            <h1 class="h3 mb-0 text-gray-800">Stock Card for <?php echo $medicine_name; ?></h1>
           </div>
 
         <?php if (isset($_SESSION['productFound']) && $_SESSION['productFound'] === false): ?>
@@ -64,13 +52,32 @@
           </div>
         <?php endif; ?>
 
-        <form class="form-inline" action="view-stock-card.php" method="post">
-          <div class="form-group mx-sm-3 mb-2">
-            <label for="productSKU" class="sr-only">Product SKU</label>
-            <input type="number" class="form-control" id="productSKU" placeholder="Input product SKU..." name="sku">
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Search</button>
-        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Particulars</th>
+              <th scope="col">Reference Number</th>
+              <th scope="col">IN</th>
+              <th scope="col">OUT</th>
+              <th scope="col">Expired</th>
+              <th scope="col">Balance</th>
+            </tr>
+            <?php foreach ($data as $row): ?>
+              <?php $balance += $row['order_qty']; ?>
+              <tr>
+                <!-- first row should be beginning balance entry   -->
+                <td><?php echo $row['date_added']; ?></td>
+                <td><?php echo $row['status'] === 'Filed' ? 'Purchase' : ''; ?></td>
+                <td><em>ref # here</em></td>
+                <td><?php echo $row['order_qty'];?></em></td>
+                <td><?php echo $row['status'] === 'Filed' ? '' : 'sales qty here'; ?></td>
+                <td></td> <!-- expired count goes here -->
+                <td><?php echo $balance; ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </thead>
+        </table>
 
         </div>
       <!-- End of Main Content -->
