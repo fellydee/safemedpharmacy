@@ -100,6 +100,10 @@
 
   <?php include('scripts.php'); ?>
 
+  <?php if ( isset($_SESSION['productFound']) ): ?>
+      <?php unset($_SESSION['productFound']); ?> 
+  <?php endif; ?>
+
 </body>
 
 </html>

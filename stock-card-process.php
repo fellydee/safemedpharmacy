@@ -4,6 +4,7 @@
 
 session_start();
 $connect = mysqli_connect('localhost','root','','safemedpharmacy');
+$_SESSION['productFound'] = false;
 
 if(!$_SESSION['username']) {
     header("Location: login.php");
@@ -29,8 +30,10 @@ $query = "SELECT date_added, brand_name, generic_name, status, order_qty FROM di
 $result_set = mysqli_query($connect, $query);
 
 if (mysqli_num_rows($result_set) == 0) {
-	echo "No data";
+	header('Location: stock-card.php');
+	die();
 } else {
+	$_SESSION['productFound'] = true;
 	while($row = mysqli_fetch_assoc($result_set)) {
 		$data[] = $row;
 	}
