@@ -313,8 +313,8 @@
                           <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit fa-sm text-white-50"></i> Edit</button>
                           <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/>
                         </form>
-                        <form class="form control_button" action="archive-user-account-process.php" method="post">
-                          <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Archive</button>
+                        <form class="form control_button" action="delete-user-account-process.php" method="post">
+                          <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-times fa-sm text-white-50"></i> Delete</button>
                           <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/>
                         </form>
                       </center></td>                      

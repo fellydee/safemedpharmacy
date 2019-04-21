@@ -15,7 +15,7 @@ $connect=mysqli_connect('localhost','root','','safemedpharmacy');
 			WHERE id = '$id'";
 
 			if(mysqli_query($connect, $query)){
-			header( "Location: archive.php" ); die;
+			header( "Location: user-account.php" ); die;
 			echo "<script>window.open('archive.php','_self')</script>";
 			}
 			if(mysqli_connect_errno($connect))

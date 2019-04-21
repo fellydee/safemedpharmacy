@@ -85,7 +85,6 @@
             <?php 
             if($login_type == "Super Admin") {
               echo '<a class="collapse-item ' . is_nav_item_active('log-management') . '" href="log-management.php">Log Management</a>
-              <a class="collapse-item ' . is_nav_item_active('archive') . '" href="archive.php">Archive</a>
               <a class="collapse-item ' . is_nav_item_active('backup') . '" href="backup.php">Backup Database</a>';
             }
             ?>
