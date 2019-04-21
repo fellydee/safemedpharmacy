@@ -1,52 +1,40 @@
 <?php
-	session_start();
 
-	// Read CSV files
-	$files = glob("dir/*.csv");
-	$sku = $_POST['sku'];
-	$productFound = false;
+// screenshot: https://i.imgur.com/uXReD8z.png
 
-	foreach($files as $file) {
-		if (($handle = fopen($file, "r")) !== FALSE) {
-			while (($data = fgetcsv($handle, 4096, "\n")) !== FALSE) {
-				$num = count($data);
+session_start();
+$connect = mysqli_connect('localhost','root','','safemedpharmacy');
 
-				for ($c=0; $c < $num; $c++) {
-					$row_content = ( explode(',', $data[$c]) );
+if(!$_SESSION['username']) {
+    header("Location: login.php");
+}
+else {
+    $username = $_SESSION['username'];
+    $name = $_SESSION['name'];
+    $login_type = $_SESSION['login_type'];
+}
 
-					if ($sku === $row_content[0]) {
-						$session_array = array(
-							"SKU" => $row_content[0],
-							"Supplier" => $row_content[1],
-							"Brand Name" => $row_content[2],
-							"Generic Name" => $row_content[3],
-							"Uom" => $row_content[4],
-							"Category" => $row_content[5],
-							"Expiry Date" => $row_content[6],
-							"Total Price" => $row_content[7],
-							"Unit Price" => $row_content[8],
-							"Selling Price" => $row_content[9]
-						);
-						$_SESSION['result'] = $session_array;
-						$productFound = true;
-					}
-				}
-			}
-			fclose($handle);
-		} else {
-			echo "Could not open file: " . $file;
-		}
+$data = array();
+$_SESSION['sku'] = $_POST['sku'];
+$medicine_name = '';
+$balance = 0;
+
+// Add the ff. into database table structure:
+// reference number
+// beginning balance (where to get this?)
+// where to get number of expired?
+
+$query = "SELECT date_added, brand_name, generic_name, status, order_qty FROM dim_inventory WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
+
+$result_set = mysqli_query($connect, $query);
+
+if (mysqli_num_rows($result_set) == 0) {
+	echo "No data";
+} else {
+	while($row = mysqli_fetch_assoc($result_set)) {
+		$data[] = $row;
 	}
+}
 
-	$_SESSION['productFound'] = $productFound;
-	$_SESSION['sku'] = $_POST['sku'];
-
-	if ( $productFound === false ) {
-		header('Location: add-purchase-order-search-product.php');
-		die();
-	}
-
-	header('Location: add-purchase-order.php');
-	die();
-
+$medicine_name = $data[0]['generic_name'] . ' ' . $data[0]['brand_name'];
 ?>
