@@ -2,11 +2,11 @@
 
 Insert project description here...
 
-## Download and Installation (as a contributor)
+## Download and Installation (as a groupmate/contributor)
 
-To begin using this, choose one of the following options to get started:
-
--  Fork this repo (follow forking guide [here](https://help.github.com/en/articles/fork-a-repo))
+- Make sure you have git installed [(follow the guide here)](https://www.atlassian.com/git/tutorials/install-git#windows)
+- Navigate to your home directory (`www` folder if you're using WAMP, `htdocs` if you're using XAMP)
+- Clone this repo by typing this in your command line: `git clone https://github.com/lycheeqt/safemedpharmacy.git`
 
 ## Usage
 
