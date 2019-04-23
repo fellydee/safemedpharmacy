@@ -251,11 +251,12 @@ if ( isset($_SESSION['result']['SKU']) ) {
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th width="10%">SKU</th>
+											<th width="5%">SKU</th>
+											<th width="10%">Reference Number</th>
 											<th width="20%">Supplier</th>
 											<th width="20%">Brand Name</th>
 											<th width="20%">Generic Name</th>
-											<th width="10%">Status</th>
+											<th width="5%">Status</th>
 											<th width="20%">Controls</th>
 										</tr>
 									</thead>
@@ -272,6 +273,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 												?>
 
 												<td><?php echo $row['sku']; ?></td>
+												<td><?php echo $row['ref_num']; ?></td>
 												<td><?php echo $row['supplier']; ?></td>
 												<td><?php echo $row['brand_name']; ?></td>
 												<td><?php echo $row['generic_name']; ?></td>
@@ -281,6 +283,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 												<td><center>
 													<form method = "POST" class="form control_button" action ="move-purchase-order.php">
 														<input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
+														<input type= "hidden" name = "sku" value ="<?php echo $row['ref_num']; ?>"/>
 														<input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
 														<input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
 														<input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
@@ -299,6 +302,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 
 													<form method = "POST" class="form control_button" action ="delete-purchase-order-process.php">
 														<input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
+														<input type= "hidden" name = "sku" value ="<?php echo $row['ref_num']; ?>"/>
 														<input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
 														<input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
 														<input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
