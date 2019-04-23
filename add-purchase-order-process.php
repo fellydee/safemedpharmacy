@@ -17,12 +17,14 @@ $selling_price = mysqli_real_escape_string($connect,$_POST['selling_price']);
 $unit_price = mysqli_real_escape_string($connect,$_POST['unit_price']); 
 $expiration_date = mysqli_real_escape_string($connect,$_POST['expiration_date']); 
 $total_price = $unit_price * $order_qty;
+$ref_num = 1000;
 
 date_default_timezone_set('Asia/Manila');
 $date_today = date('Y-m-j');	
 
 $query = "INSERT INTO dim_inventory(
-			brand_name 
+			ref_num
+			,brand_name 
 			, generic_name
 			, uom
 			, supplier
@@ -38,7 +40,8 @@ $query = "INSERT INTO dim_inventory(
 			, status
 			, sku
 		) VALUES (
-			'$brand_name'
+			'$ref_num'
+			, '$brand_name'
 			, '$generic_name'
 			, '$uom'
 			, '$supplier'
@@ -56,9 +59,16 @@ $query = "INSERT INTO dim_inventory(
 		)";
 
 if(mysqli_query($connect, $query)){
-	header( "Location: purchase-order.php" );
-	die();
-	echo "<script>window.open('purchase-order.php','_self')</script>";
+	$item_id = mysqli_insert_id($connect);
+	$ref_num += $item_id;
+	$ref_num_query = "UPDATE dim_inventory SET ref_num = $ref_num WHERE item_id=$item_id";
+
+	if (mysqli_query($connect, $ref_num_query)) {
+
+		header( "Location: purchase-order.php" );
+		die();
+		echo "<script>window.open('purchase-order.php','_self')</script>";
+	}
 } else if(mysqli_connect_errno($connect)) {
 	echo 'Failed to connect';
 } else {
