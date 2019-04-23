@@ -5,3 +5,7 @@
 #page-top.not-super-admin .financial-earnings {
 	display: none;
 }
+
+.purchase-order-table th:last-child {
+    min-width: 126px;
+}
