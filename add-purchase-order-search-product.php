@@ -58,9 +58,12 @@
             <h1 class="h3 mb-0 text-gray-800">Add New Purchase Order</h1>
           </div>
 
-        <?php if (isset($_SESSION['productFound']) && $_SESSION['productFound'] === false): ?>
+        <?php if (isset($_SESSION['productFound']) && 
+                  isset($_SESSION['sku']) && 
+                  $_SESSION['productFound'] === false): ?>
           <div class="alert alert-danger col-lg-5" role="alert">
             Product with SKU: <?php echo $_SESSION['sku']; ?> not found - please try again.
+            <?php unset($_SESSION['sku']); ?>
           </div>
         <?php endif; ?>
 
