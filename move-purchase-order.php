@@ -132,7 +132,7 @@ foreach($files as $file) {
                             </div>
                             <div class="form-group">
                                 <label>Reference Number</label>
-                                <input readonly type="text" class="form-control" name="sku" value="<?php echo $row['ref_num']; ?>">
+                                <input readonly type="text" class="form-control" name="ref_num" value="<?php echo $row['ref_num']; ?>">
                             </div>
                             <div class="form-group">
                               <label>Brand Name</label>
