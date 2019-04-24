@@ -282,9 +282,9 @@ if ( isset($_SESSION['result']['SKU']) ) {
 
 												<td><center>
 													<form method = "POST" class="form control_button" action ="move-purchase-order.php">
-														<input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
-														<input type= "hidden" name = "sku" value ="<?php echo $row['ref_num']; ?>"/>
-														<input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
+														<!-- <input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/> -->
+														<input type= "hidden" name = "ref_num" value ="<?php echo $row['ref_num']; ?>"/>
+														<!-- <input type= "hidden" name = "brand_name" value ="<?php echo $row['brand_name']; ?>"/>
 														<input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>
 														<input type= "hidden" name = "supplier" value ="<?php echo $row['supplier']; ?>"/>
 														<input type= "hidden" name = "uom" value ="<?php echo $row['uom']; ?>"/>
@@ -295,7 +295,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 														<input type= "hidden" name = "category" value ="<?php echo $row['category']; ?>"/>
 														<input type= "hidden" name = "order_qty" value ="<?php echo $row['order_qty']; ?>"/>
 														<input type= "hidden" name = "expiration_date" value ="<?php echo $row['expiration_date']; ?>"/>
-														<input type= "hidden" name = "selling_price" value ="<?php echo $row['selling_price']; ?>"/>
+														<input type= "hidden" name = "selling_price" value ="<?php echo $row['selling_price']; ?>"/> -->
 
 														<button type="submit" id="submit" name="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-share fa-sm text-white-50"></i> Move</button>
 													</form>
