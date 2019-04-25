@@ -263,6 +263,7 @@ if(!$_SESSION['username']) {
 													<td class="controls"><center>
 														<button type="submit" id="submit" name="add-to-cart" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-cart-plus fa-sm text-white-50"></i> Buy</button>
 														<input type="hidden" name="item_id" value ="<?php echo $row['item_id']; ?>"/>
+														<input type="hidden" name="sku" value ="<?php echo $row['sku']; ?>"/>
 														<input type="hidden" name="brand_name" value ="<?php echo $row['brand_name']; ?>"/>
 														<input type="hidden" name="generic_name" value ="<?php echo $row['generic_name']; ?>"/>
 														<input type="hidden" name="selling_price" value ="<?php echo $row['selling_price']; ?>"/>
