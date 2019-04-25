@@ -14,7 +14,7 @@ $uom = $_POST['uom'];
 $defective_qty = $_POST['defective_qty'];
 $selling_price = $_POST['selling_price'];
 $total_price1 = $order_qty - $defective_qty;
-$total_price = $total_price1 * $unit_price; 
+$total_price = $total_price1 * $unit_price;
 
 $query = "UPDATE dim_inventory set 
 expiration_date = '$expiration_date',
@@ -24,7 +24,8 @@ order_qty = '$order_qty',
 uom = '$uom',
 selling_price = '$selling_price',
 total_price = '$total_price',
-status = 'Received' 
+status = 'Received',
+stock_count = $order_qty
 WHERE sku = '$sku'";
 
 if(mysqli_query($connect, $query)){

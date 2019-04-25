@@ -69,7 +69,7 @@
                 <!-- first row should be beginning balance entry   -->
                 <td><?php echo $row['date_added']; ?></td>
                 <td><?php echo $row['status'] === 'Filed' ? 'Purchase' : ''; ?></td>
-                <td><em>ref # here</em></td>
+                <td><?php echo $row['ref_num']; ?></td>
                 <td><?php echo $row['order_qty'];?></em></td>
                 <td><?php echo $row['status'] === 'Filed' ? '' : 'sales qty here'; ?></td>
                 <td></td> <!-- expired count goes here -->

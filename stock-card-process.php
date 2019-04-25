@@ -25,7 +25,7 @@ $balance = 0;
 // beginning balance (where to get this?)
 // where to get number of expired?
 
-$query = "SELECT date_added, brand_name, generic_name, status, order_qty FROM dim_inventory WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
+$query = "SELECT date_added, brand_name, generic_name, ref_num, status, order_qty FROM dim_inventory WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
 
 $result_set = mysqli_query($connect, $query);
 
