@@ -5,6 +5,7 @@ session_start();
 $connect = mysqli_connect('localhost','root','','safemedpharmacy');
 
 $item_id = mysqli_real_escape_string($connect,$_POST['item_id']);
+$sku = mysqli_real_escape_string($connect,$_POST['sku']);
 $brand_name = mysqli_real_escape_string($connect,$_POST['brand_name']);
 $generic_name = mysqli_real_escape_string($connect,$_POST['generic_name']);
 $quantity = mysqli_real_escape_string($connect,$_POST['quantity']);
@@ -24,6 +25,7 @@ if (isset($_POST['discount']) && $_POST['discount'] === 'yes') {
 
 	$query = "INSERT INTO dim_orders (
 				item_id
+				, sku
 				, brand_name
 				, generic_name
 				, quantity
@@ -35,6 +37,7 @@ if (isset($_POST['discount']) && $_POST['discount'] === 'yes') {
 				) 
 			VALUES (
 				'$item_id'
+				, '$sku'
 				, '$brand_name'
 				, '$generic_name'
 				, '$quantity'
@@ -51,6 +54,7 @@ if (isset($_POST['discount']) && $_POST['discount'] === 'yes') {
 
 	$query = "INSERT INTO dim_orders (
 				item_id
+				, sku
 				, brand_name
 				, generic_name
 				, quantity
@@ -61,6 +65,7 @@ if (isset($_POST['discount']) && $_POST['discount'] === 'yes') {
 				) 
 			VALUES (
 				'$item_id'
+				, '$sku'
 				, '$brand_name'
 				, '$generic_name'
 				, '$quantity'
