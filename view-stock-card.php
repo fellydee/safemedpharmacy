@@ -63,7 +63,7 @@
               <th scope="col">Expired</th>
               <th scope="col">Balance</th>
             </tr>
-            <?php foreach ($sales_invoice_data as $row): ?>
+            <?php foreach ($data as $row): ?>
               <?php $balance += $row['order_qty']; ?>
               <tr>
                 <!-- first row should be beginning balance entry   -->
