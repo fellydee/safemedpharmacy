@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 25, 2019 at 01:00 AM
+-- Generation Time: Apr 26, 2019 at 02:40 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `dim_inventory` (
 --
 
 INSERT INTO `dim_inventory` (`item_id`, `ref_num`, `brand_name`, `generic_name`, `uom`, `supplier`, `defective_qty`, `order_qty`, `unit_price`, `selling_price`, `total_price`, `category`, `expiration_date`, `added_by`, `date_added`, `status`, `sku`, `stock_count`) VALUES
-(108, 1108, 'RANITIDINE ', 'RANIPHIL', '300mg TAB', 'Life & Health Dist.', 0, 99, 10.25, 31.00, 1014.75, 'MEDICINE', '2019-11-01', 'Super Admin', '2019-04-21', 'Received', 82, 18),
+(108, 1108, 'RANITIDINE ', 'RANIPHIL', '300mg TAB', 'Life & Health Dist.', 0, 99, 10.25, 31.00, 1014.75, 'MEDICINE', '2019-11-01', 'Super Admin', '2019-04-21', 'Received', 82, 7),
 (115, 1115, 'TAMSULOSIN ', 'SULTAM', '200mcg TAB', 'Life & Health Dist.', 0, 674, 0.95, 5.00, 640.30, 'MEDICINE', '2020-04-01', 'Super Admin', '2019-04-24', 'Filed', 89, 0),
 (116, 1116, 'Generic', 'ALLOPURINOL ', '100mg TAB', 'Excelsis (Ritemed)', 0, 5, 5.50, 8.25, 27.50, 'MEDICINE', '2019-11-19', 'Super Admin', '2019-04-24', 'Filed', 99, 0),
 (117, 1117, 'RANITIDINE ', 'RANIPHIL', '300mg TAB', 'Life & Health Dist.', 0, 99, 10.25, 31.00, 1014.75, 'MEDICINE', '2019-11-01', 'Super Admin', '2019-04-24', 'Received', 82, 99);
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `dim_loghistory` (
   `login_type` varchar(100) NOT NULL,
   `date_login` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dim_loghistory`
@@ -175,7 +175,9 @@ INSERT INTO `dim_loghistory` (`id`, `username`, `name`, `login_type`, `date_logi
 (68, 'admin', 'Super Admin', 'Super Admin', 'April 23, 2019 12:55:am  '),
 (69, 'admin', 'Super Admin', 'Super Admin', 'April 23, 2019 2:41:pm  '),
 (70, 'admin', 'Super Admin', 'Super Admin', 'April 23, 2019 6:49:pm  '),
-(71, 'admin', 'Super Admin', 'Super Admin', 'April 25, 2019 6:51:am  ');
+(71, 'admin', 'Super Admin', 'Super Admin', 'April 25, 2019 6:51:am  '),
+(72, 'admin', 'Super Admin', 'Super Admin', 'April 25, 2019 9:41:am  '),
+(73, 'admin', 'Super Admin', 'Super Admin', 'April 26, 2019 10:00:am  ');
 
 -- --------------------------------------------------------
 
@@ -214,6 +216,7 @@ DROP TABLE IF EXISTS `dim_orders`;
 CREATE TABLE IF NOT EXISTS `dim_orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
+  `sku` int(11) DEFAULT NULL,
   `brand_name` varchar(200) NOT NULL,
   `generic_name` varchar(200) NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -223,26 +226,15 @@ CREATE TABLE IF NOT EXISTS `dim_orders` (
   `discount` double(10,2) DEFAULT '0.00',
   `date_added` date NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dim_orders`
 --
 
-INSERT INTO `dim_orders` (`order_id`, `item_id`, `brand_name`, `generic_name`, `quantity`, `price`, `vat`, `vat_exempt`, `discount`, `date_added`) VALUES
-(3, 100, 'FORALIVIT  ', 'FESO4+FOLIC+VIT B COMPLEX', 1, 5.00, 0.54, 4.46, 0.00, '2019-04-21'),
-(4, 100, 'FORALIVIT  ', 'FESO4+FOLIC+VIT B COMPLEX', 1, 5.00, 0.54, 4.46, 0.00, '2019-04-21'),
-(5, 108, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25'),
-(6, 108, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25'),
-(7, 108, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25'),
-(8, 108, 'RANITIDINE ', 'RANIPHIL', 50, 1550.00, 166.07, 1383.93, 0.00, '2019-04-25'),
-(9, 108, 'RANITIDINE ', 'RANIPHIL', 5, 155.00, 16.61, 138.39, 0.00, '2019-04-25'),
-(10, 108, 'RANITIDINE ', 'RANIPHIL', 5, 155.00, 16.61, 138.39, 0.00, '2019-04-25'),
-(11, 108, 'RANITIDINE ', 'RANIPHIL', 5, 155.00, 16.61, 138.39, 0.00, '2019-04-25'),
-(12, 108, 'RANITIDINE ', 'RANIPHIL', 5, 155.00, 16.61, 138.39, 0.00, '2019-04-25'),
-(13, 108, 'RANITIDINE ', 'RANIPHIL', 9, 279.00, 29.89, 249.11, 0.00, '2019-04-25'),
-(14, 108, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25'),
-(15, 108, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25');
+INSERT INTO `dim_orders` (`order_id`, `item_id`, `sku`, `brand_name`, `generic_name`, `quantity`, `price`, `vat`, `vat_exempt`, `discount`, `date_added`) VALUES
+(18, 108, 82, 'RANITIDINE ', 'RANIPHIL', 5, 155.00, 16.61, 138.39, 0.00, '2019-04-26'),
+(17, 108, 82, 'RANITIDINE ', 'RANIPHIL', 1, 31.00, 3.32, 27.68, 0.00, '2019-04-25');
 
 -- --------------------------------------------------------
 
