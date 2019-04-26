@@ -11,7 +11,7 @@ $generic_name = mysqli_real_escape_string($connect,$_POST['generic_name']);
 $quantity = mysqli_real_escape_string($connect,$_POST['quantity']);
 $selling_price = mysqli_real_escape_string($connect,$_POST['selling_price']);
 $stock_count = mysqli_real_escape_string($connect,$_POST['stock_count']);
-$stock_count -= $quantity;
+$stock_count = (int)$stock_count - (int)$quantity;
 
 date_default_timezone_set('Asia/Manila');
 $date_added = date('Y-m-j');
