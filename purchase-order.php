@@ -258,6 +258,18 @@ if ( isset($_SESSION['result']['SKU']) ) {
 								unset($_SESSION['is_cancelled']);
 							endif; ?>
 
+
+							<?php if (isset($_SESSION['is_added']) && $_SESSION['is_added'] ): ?>
+								<div class="alert alert-success col-lg-8" role="alert">
+									You have successfully added your purchase order with Reference #<?php echo $_SESSION['ref_num']; ?>.
+								</div>
+							<?php endif; ?>
+
+							<?php if (isset($_SESSION['is_added']) && 
+								$_SESSION['is_added'] === true):
+								unset($_SESSION['is_added']);
+							endif; ?>
+
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>

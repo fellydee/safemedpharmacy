@@ -19,6 +19,11 @@ $expiration_date = mysqli_real_escape_string($connect,$_POST['expiration_date'])
 $total_price = $unit_price * $order_qty;
 $ref_num = 1000;
 
+$_SESSION['is_added'] = FALSE;
+
+
+$query = "SELECT FROM dim_inventory WHERE ref_num = $ref_num";
+
 date_default_timezone_set('Asia/Manila');
 $date_today = date('Y-m-j');	
 
@@ -61,9 +66,12 @@ $query = "INSERT INTO dim_inventory(
 if(mysqli_query($connect, $query)){
 	$item_id = mysqli_insert_id($connect);
 	$ref_num += $item_id;
+	$_SESSION['ref_num'] = $ref_num;
+
 	$ref_num_query = "UPDATE dim_inventory SET ref_num = $ref_num WHERE item_id=$item_id";
 
 	if (mysqli_query($connect, $ref_num_query)) {
+		$_SESSION['is_added'] = TRUE;
 
 		header( "Location: purchase-order.php" );
 		die();
