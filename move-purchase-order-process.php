@@ -15,6 +15,7 @@ $defective_qty = $_POST['defective_qty'];
 $selling_price = $_POST['selling_price'];
 $total_price1 = $order_qty - $defective_qty;
 $total_price = $total_price1 * $unit_price;
+$ref_num = $_POST['ref_num'];
 
 $query = "UPDATE dim_inventory set 
 expiration_date = '$expiration_date',
@@ -26,9 +27,10 @@ selling_price = '$selling_price',
 total_price = '$total_price',
 status = 'Received',
 stock_count = $order_qty
-WHERE sku = '$sku'";
+WHERE ref_num = '$ref_num'";
 
 if(mysqli_query($connect, $query)){
+
 	header( "Location: purchase-order.php" ); die;
 	echo "<script>window.open('purchase-order.php','_self')</script>";
 } else {
