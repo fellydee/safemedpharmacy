@@ -9,3 +9,22 @@
 .purchase-order-table th:last-child {
     min-width: 126px;
 }
+
+.page-item.active .page-link,
+.dt-buttons button,
+.btn-primary {
+    background-color: #4b9b22;
+    border-color: #4b9b22;
+}
+
+.page-item.active .page-link
+.dt-buttons button:hover,
+.btn-primary:hover {
+    background-color: #65B53C;
+    border-color: #65B53C;
+}
+
+.bg-primary {
+    background-color: #4b9b22 !important;
+}
+}
