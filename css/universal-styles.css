@@ -24,7 +24,9 @@
     border-color: #65B53C;
 }
 
-.bg-primary {
+.bg-primary,
+.dt-buttons button:hover {
     background-color: #4b9b22 !important;
+}
 }
 }
