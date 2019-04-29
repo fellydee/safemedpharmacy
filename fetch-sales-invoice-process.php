@@ -1,10 +1,5 @@
 <?php
-
-// screenshot: https://i.imgur.com/uXReD8z.png
-
-// session_start();
 $connect = mysqli_connect('localhost','root','','safemedpharmacy');
-// $_SESSION['productFound'] = false;
 
 if(!$_SESSION['username']) {
     header("Location: login.php");
@@ -18,15 +13,7 @@ else {
 $salesData = array();
 $_SESSION['sku'] = $_POST['sku'];
 $is_sold = false;
-// $medicine_name = '';
-// $balance = 0;
 
-// Add the ff. into database table structure:
-// reference number
-// beginning balance (where to get this?)
-// where to get number of expired?
-
-// $query = "SELECT date_added, brand_name, generic_name, ref_num, status, order_qty FROM dim_inventory WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
 $query = "SELECT date_added, item_id, quantity FROM dim_orders WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
 
 $result_set = mysqli_query($connect, $query);
