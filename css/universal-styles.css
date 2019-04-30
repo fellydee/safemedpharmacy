@@ -32,3 +32,9 @@
     background-color: #65B53C;
     border-color: #65B53C;
 }
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item.active,
+.sidebar .nav-item .collapsing .collapse-inner .collapse-item.active,
+.text-primary {
+    color: #4b9b22!important;
+}
