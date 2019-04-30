@@ -239,7 +239,7 @@ if(!$_SESSION['username']) {
 									<tbody>
 										<tr>
 											<?php    
-											$query = "SELECT * FROM dim_inventory WHERE expiration_date > CURDATE() AND stock_count >= 1 AND status ='Received'";
+											$query = "SELECT * FROM dim_inventory WHERE expiration_date >= CURDATE() AND stock_count >= 1 AND status ='Received'";
 
 											$result_set =  mysqli_query($connect, $query);
 
