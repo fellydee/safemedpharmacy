@@ -165,7 +165,7 @@ if(!$_SESSION['username']) {
 											</div>
 										</div>
 										<div class="col-auto">
-											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+											<i class="far fa-money-bill-alt fa-2x text-gray-30"></i>
 										</div>
 									</div>
 								</div>

@@ -62,7 +62,7 @@
     <!-- Nav Item - Sales Invoice Collapse Menu -->
     <li class="nav-item <?php echo !strcmp($_SERVER['REQUEST_URI'], '/safemedpharmacy/pos.php') ? 'active' : '' ?>">
       <a class="nav-link" href="pos.php">
-        <i class="fas fa-fw fa-dollar-sign"></i>
+        <i class="far fa-money-bill-alt"></i>
         <span>Point of Sales</span></a>
       </li>
 
