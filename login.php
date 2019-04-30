@@ -12,7 +12,7 @@
   <?php include('head-actions.php'); ?>
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary login">
 
   <div class="container">
 
