@@ -17,7 +17,16 @@ $_SESSION['sku'] = $_POST['sku'];
 $medicine_name = '';
 $balance = 0;
 
-$query = "SELECT date_added, brand_name, generic_name, ref_num, status, order_qty FROM dim_inventory WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
+$query = "SELECT 
+			date_added
+			, brand_name
+			, generic_name
+			, ref_num
+			, status
+			, order_qty
+			, expiration_date
+		FROM dim_inventory 
+		WHERE sku=" . mysqli_escape_string($connect, $_POST['sku']);
 
 $result_set = mysqli_query($connect, $query);
 
