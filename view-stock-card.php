@@ -1,5 +1,6 @@
 <?php include('stock-card-process.php'); ?>
 <?php include('fetch-sales-invoice-process.php'); ?>
+<?php include('fetch-expired-products-process.php'); ?>
 <?php $tableData = array(); ?>
 <?php $dataToInsert = array(); ?>
 
@@ -94,6 +95,20 @@
 								array_push($tableData, $dataToInsert);?>
 							<?php endforeach; ?>
 
+							<?php foreach ($expiredData as $row):
+								$dataToInsert = array(
+									$row['expiration_date'],
+									'Expired',
+									$row['ref_num'],
+									'',
+									'',
+									$row['stock_count'],
+									'',
+								);
+
+								array_push($tableData, $dataToInsert);?>
+							<?php endforeach; ?>
+
 							<?php
 							function date_compare($element1, $element2) { 
 								$datetime1 = strtotime($element1[0]); 
@@ -107,10 +122,12 @@
 							<?php $balance = 0; ?>
 							<?php foreach ($tableData as $row): ?>
 								<?php
-								if ($row[3] != '' && $row[4] == '') {
+								if ($row[1] === 'Purchase') {
 									$balance += $row[3];
-								} else {
+								} elseif ($row[1] === 'Sold') {
 									$balance -= $row[4];
+								} elseif ($row[1] === 'Expired') {
+									$balance -= $row[5];
 								}
 								?>
 								<tr>
