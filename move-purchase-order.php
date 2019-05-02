@@ -185,7 +185,8 @@ foreach($files as $file) {
                   </div>    
                    <div class="form-group">
                     <label>Expiration Date</label> 
-                      <input type="date" class="form-control" name="expiration_date" value="<?= date('dd-mm-YYYY');?>" required>
+                      <br /> <input type="checkbox" id="medicine-check" /> Is this medicine, or does this item expire? 
+                      <input type="date" class="form-control" name="expiration_date" value="<?= date('dd-mm-YYYY');?>" id="move-po-expiration-date" style="display:none;" required>
                   </div> 
               </div>
           </div>
@@ -201,7 +202,7 @@ foreach($files as $file) {
       <input type="hidden" name="generic_name" value="<?php echo $row['generic_name']; ?>">
       <input type="hidden" name="uom" value="<?php echo $row['uom']; ?>">
       <input type="hidden" name="category" value="<?php echo $row['category']; ?>">
-      <input type="hidden" name="expiration_date" value="<?php echo $row['expiration_date']; ?>">
+      <!-- <input type="hidden" name="expiration_date" value="<?php echo $row['expiration_date']; ?>"> -->
       <input type="hidden" name="unit_price" value="<?php echo $row['unit_price']; ?>">
       <input type="hidden" name="selling_price" value="<?php echo $row['selling_price']; ?>">
 

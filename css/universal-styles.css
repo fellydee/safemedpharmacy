@@ -66,3 +66,9 @@
     margin: 0 auto;
     margin-top: 15px;
 }
+
+/* Conditional input field based on checkbox */
+#medicine-check:checked + #move-po-expiration-date {
+    display: block!important;
+    margin-top: 15px;
+}
