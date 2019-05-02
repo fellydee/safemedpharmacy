@@ -120,7 +120,7 @@
                   </div>
                   <div class="form-group">
                     <label>Order Quantity</label>
-                    <input type="text" class="form-control" name="order_qty" value="">
+                    <input type="text" class="form-control" name="order_qty" value="" required>
                   </div>
                   <div class="form-group">
                     <label>Expiration Date</label>
