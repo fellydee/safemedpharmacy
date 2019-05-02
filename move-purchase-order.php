@@ -180,13 +180,13 @@ foreach($files as $file) {
                       <input readonly type="text" class="form-control" name="order_qty" value="<?php echo $row['order_qty']; ?>">
                   </div>      
                   <div class="form-group">
-                      <label>Expiration Date</label>
-                      <input readonly type="text" class="form-control" name="expiration_date" value="<?php echo $row['expiration_date']; ?> ">
-                  </div>  
-                  <div class="form-group">
                       <label>Selling Price</label>
                       <input readonly type="text" class="form-control" name="selling_price" value="<?php echo $row['selling_price']; ?> ">
                   </div>    
+                   <div class="form-group">
+                    <label>Expiration Date</label> 
+                      <input type="date" class="form-control" name="expiration_date" value="<?= date('dd-mm-YYYY');?>" required>
+                  </div> 
               </div>
           </div>
       </div>

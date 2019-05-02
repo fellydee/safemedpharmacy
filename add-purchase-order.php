@@ -122,11 +122,11 @@
                     <label>Order Quantity</label>
                     <input type="text" class="form-control" name="order_qty" value="" required>
                   </div>
-                  <div class="form-group">
-                    <label>Expiration Date</label>
+                 <!--  <div class="form-group">
+                    <label>Expiration Date</label> -->
                     <!-- <input type="text" class="form-control" name="expiration_date" value="<?php echo $result['Expiry Date'] ?>" readonly> -->
-                    <input type="date" class="form-control" name="expiration_date" value="<?= date('Y-m-d');?>">
-                  </div>  
+                 <!--    <input type="date" class="form-control" name="expiration_date" value="<?= date('dd-mm-YYYY');?>">
+                  </div>  --> 
                   <div class="form-group">
                     <label>Selling Price</label>
                     <input type="text" class="form-control" name="selling_price" value="<?php echo $result['Selling Price'] ?>" readonly>
