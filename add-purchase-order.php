@@ -124,7 +124,8 @@
                   </div>
                   <div class="form-group">
                     <label>Expiration Date</label>
-                    <input type="text" class="form-control" name="expiration_date" value="<?php echo $result['Expiry Date'] ?>" readonly>
+                    <!-- <input type="text" class="form-control" name="expiration_date" value="<?php echo $result['Expiry Date'] ?>" readonly> -->
+                    <input type="date" class="form-control" name="expiration_date" value="<?= date('Y-m-d');?>">
                   </div>  
                   <div class="form-group">
                     <label>Selling Price</label>

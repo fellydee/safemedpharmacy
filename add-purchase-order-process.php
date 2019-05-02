@@ -56,7 +56,7 @@ $query = "INSERT INTO dim_inventory(
 			, '$selling_price'
 			, '$total_price'
 			, '$category'
-			, STR_TO_DATE('$expiration_date','%d/%m/%Y')
+			, '$expiration_date'
 			, '$name'
 			, '$date_today'
 			, 'Filed'
