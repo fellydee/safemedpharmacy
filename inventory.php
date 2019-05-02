@@ -205,6 +205,18 @@
                   </div>
                 </div>
 
+                 High Quantity:
+                        <div class="sonar-wrapper">
+                          <div class="sonar-emitter-goodqty">
+                        </div>
+                      </div>
+            
+                      Low   Quantity:
+                      <div class="sonar-wrapper">
+                          <div class="sonar-emitter-badqty">
+                        </div>
+                      </div>
+
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
