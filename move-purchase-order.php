@@ -188,6 +188,12 @@ foreach($files as $file) {
                       <br /> <input type="checkbox" id="medicine-check" /> Is this medicine, or does this item expire? 
                       <input type="date" class="form-control" name="expiration_date" value="<?= date('dd-mm-YYYY');?>" id="move-po-expiration-date" style="display:none;" required>
                   </div> 
+
+                  <script>
+                    document.getElementById('medicine-check').onchange = function() {
+                        document.getElementById('move-po-expiration-date').disabled = !this.checked;
+                    };
+                  </script>
               </div>
           </div>
       </div>
