@@ -192,6 +192,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">User Account</h1>
+            <?php if( $login_type != 'Owner' ): ?>
             <div class="action-buttons">
 
             <?php 
@@ -201,6 +202,7 @@
             ?>
 
             </div>
+             <?php endif; ?>
           </div>
 
           <div class="card shadow mb-4">
