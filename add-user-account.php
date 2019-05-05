@@ -98,9 +98,10 @@
                           <label>User Type</label>
                           <!-- <input type="text" class="form-control" name="category" value=""> -->
                           <select class="form-control" name="login_type">
+                            <option value="Owner">Owner</option>
                             <option value="Admin">Admin</option>
-                            <option value="Pharmacist">Pharmacist</option>
                             <option value="Pharmacist Assistant">Pharmacist Assistant</option>
+
                           </select>
                         </div>
                     </div>
