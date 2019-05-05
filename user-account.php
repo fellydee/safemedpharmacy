@@ -361,31 +361,21 @@
                       columns: [ 0, 1, 2, 3, 4 ]
                   }
               }
-          ]
-      } );
+          ], "columnDefs": [
+                  {
+                    "targets": [ 0 ],
+                    "visible": false,
+                    "searchable": false
+                  }
+                  ]
+                } );
+                $('div.dt-buttons').appendTo('.action-buttons');
+              } );
+            </script>
 
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
 
-<?php 
-if($login_type != "Super Admin") { 
-echo ', "columnDefs": [
-            {
-                "targets": [ 4 ],
-                "visible": false,
-                "searchable": false
-            }
-        ]';
-      }
-?>
+          </body>
 
-      } );
-      $('div.dataTables_filter').appendTo('.card-header');
-      $('div.dt-buttons').appendTo('.action-buttons');
-  } );
-  </script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
+          </html>
