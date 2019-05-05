@@ -70,7 +70,7 @@
                 <div class="card shadow mb-4">
                   <div class="card-body">
                     <div class="box-body">
-                      <form class="form" action="edit-user-account-process.php"" method="post">
+                      <form class="form" action="edit-user-account-process.php" method="post">
                         <?php   
                         $id = $_POST['id']; 
                         $query = "select * from dim_login where id = '$id';";             
@@ -106,8 +106,8 @@
                           <!-- <input type="text" class="form-control" name="category" value=""> -->
                           <select class="form-control" name="login_type" required>
                             <option value="Super Admin" <?php if($user_login_type=="Super Admin") echo 'selected="selected"'; ?>>Super Admin</option>
-                            <option value="Admin" <?php if($user_login_type=="Admin") echo 'selected="selected"'; ?>>Admin</option>
-                            <option value="Pharmacist" <?php if($user_login_type=="Pharmacist") echo 'selected="selected"'; ?> >Pharmacist</option>
+                            <option value="Owner" <?php if($user_login_type=="Owner") echo 'selected="selected"'; ?>>Owner</option>
+                            <option value="Admin" <?php if($user_login_type=="Admin") echo 'selected="selected"'; ?> >Admin</option>
                             <option value="Pharmacist Assistant" <?php if($user_login_type=="Pharmacist Assistant") echo 'selected="selected"'; ?>>Pharmacist Assistant</option>
                           </select>
                         </div>
