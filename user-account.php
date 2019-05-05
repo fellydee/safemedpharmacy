@@ -11,7 +11,7 @@
         $username = $_SESSION['username'];
         $name = $_SESSION['name'];
         $login_type = $_SESSION['login_type'];
-        if($login_type != "Super Admin" and $login_type != "Admin") {
+        if($login_type != "Super Admin" && $login_type != "Owner") {
           header("Location: index.php");
         }
     }
@@ -346,28 +346,20 @@
                     } );
                 },
                   exportOptions: {
-                      columns: [ 0, 1, 2, 3, 4 ]
+                      columns: [ 0, 1, 2, 3 ]
                   }
               }
           ]
       } );
-<?php 
-if($login_type != "Super Admin") { 
-echo ', "columnDefs": [
-            {
-                "targets": [ 4 ],
-                "visible": false,
-                "searchable": false
-            }
-        ]';
-      }
-?>
-      } );
+
       $('div.dataTables_filter').appendTo('.card-header');
       $('div.dt-buttons').appendTo('.action-buttons');
   } );
   </script>
+
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>
