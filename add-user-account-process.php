@@ -8,7 +8,7 @@ $connect=mysqli_connect('localhost','root','','safemedpharmacy');
 
 
 			$query = "INSERT INTO dim_login(username, password, name, login_type, status) 
-			VALUES ('$username', md5('$password'), '$employee_name', '$login_type', 'active')";
+			VALUES ('$username', md5('$password'), '$employee_name', '$login_type', 'Active')";
 
 			if(mysqli_query($connect, $query)){
 			header( "Location: user-account.php" ); die;
