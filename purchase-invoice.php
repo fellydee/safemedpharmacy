@@ -330,6 +330,19 @@
               {
                   extend: 'pdfHtml5',
                    customize: function ( doc ) {
+                     // Create a footer
+                    doc['footer']=(function(page, pages) {
+                   return {
+                      columns: [
+                          {
+                              // This is the right column
+                              alignment: 'right',
+                              text: ['Signature of Employee \n\n\n ____________________ \n\n Juan Dela Cruz']
+                          }
+                      ],
+                      margin: [75, -100]
+                  }
+              });
                     doc.content.splice( 1, 0, {
                         margin: [ 0, 0, 0, 12 ],
                         alignment: 'center',
@@ -338,12 +351,12 @@
 
                       {
                         alignment: 'center',
-                        text: '#33 Arayat St., Bgy. San Martin de Porres, Cubao, Quezon City \n' + today,
+                        text: '#33 Arayat St., Bgy. San Martin de Porres, Cubao, Quezon City \n' + today + '\n\n',
                     } );
                 },
 
                   exportOptions: {
-                      columns: [ 0, 1, 2, 3, 4 ]
+                      columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                   }
               }
           ]

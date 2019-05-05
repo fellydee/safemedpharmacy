@@ -461,7 +461,7 @@ if(!$_SESSION['username']) {
 											{
 												alignment: 'center',
 							      				// text: '#33 Arayat St., Bgy. San Martin de Porres, Cubao, Quezon City \n' + today,
-							      				text: '#33 Arayat St., Bgy. San Martin de Porres, Cubao, Quezon City \n' + today + '\n\n\n',
+							      				text: '#33 Arayat St., Bgy. San Martin de Porres, Cubao, Quezon City \n' + today + '\n\n',
 											}
 											);
 											doc['footer']=(function(page, pages) {
