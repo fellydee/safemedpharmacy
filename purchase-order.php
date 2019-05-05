@@ -230,7 +230,9 @@ if ( isset($_SESSION['result']['SKU']) ) {
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Purchase Order</h1>
+						<?php if( $login_type != 'Owner' ): ?>
 						<div class="action-buttons"><a href="add-purchase-order-search-product.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i>  Add Record</a> </div>
+						<?php endif; ?>
 					</div>
 
 					<div class="card shadow mb-4">
