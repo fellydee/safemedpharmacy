@@ -66,13 +66,7 @@
         <span>Point of Sales</span></a>
       </li>
 
-
-      <?php 
-      if($login_type != "Super Admin" and $login_type != "Admin") {
-        echo "<style>#cpanel { display: none; }</style>";
-      }
-      ?>
-
+      <?php if( $login_type == "Super Admin" || $login_type == "Owner" ): ?>
       <!-- Nav Item - Control Panel Collapse Menu -->
       <li class="nav-item" id="cpanel">
         <a class="nav-link <?php echo is_nav_active($controlPanel) ? 'active' : 'collapsed'; ?>" href="#" data-toggle="collapse" data-target="#collapsePagesControlPanel" aria-expanded="true" aria-controls="collapsePagesControlPanel">
@@ -82,14 +76,11 @@
         <div id="collapsePagesControlPanel" class="collapse <?php echo is_nav_active($controlPanel) ? 'show' : ''; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item <?php echo is_nav_item_active('user-account')?>" href="user-account.php">Users</a>
-            <?php 
-            if($login_type == "Super Admin") {
-              echo '<a class="collapse-item ' . is_nav_item_active('log-management') . '" href="log-management.php">Log Management</a>
-              <a class="collapse-item ' . is_nav_item_active('backup') . '" href="backup.php">Backup Database</a>';
-            }
-            ?>
+              <a class="collapse-item ' . is_nav_item_active('log-management') . '" href="log-management.php">Log Management</a>
+              <a class="collapse-item ' . is_nav_item_active('backup') . '" href="backup.php">Backup Database</a>
           </div>
         </div>
       </li>
+      <?php endif; ?>
 
     </ul>

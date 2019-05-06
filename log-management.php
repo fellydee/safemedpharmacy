@@ -12,10 +12,6 @@
         $username = $_SESSION['username'];
         $name = $_SESSION['name'];
         $login_type = $_SESSION['login_type'];
-
-        if($login_type != "Super Admin") {
-          header("Location: index.php");
-        }
     }
 ?>
 
