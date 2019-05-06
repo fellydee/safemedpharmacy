@@ -15,7 +15,7 @@ if(!$_SESSION['username']) {
 	$name = $_SESSION['name'];
 	$login_type = $_SESSION['login_type'];
 
-	if ( strcmp($login_type, "Super Admin") == 0 ) {
+	if ( strcmp($login_type, 'Super Admin') === 0 && strcmp($login_type, 'Owner') === 0 ) {
 		$is_admin = true;
 		$body_class = 'super-admin';
 	} else {
