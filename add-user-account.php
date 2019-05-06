@@ -102,7 +102,6 @@
                             <option value="Owner">Owner</option>
                             <option value="Admin">Admin</option>
                             <option value="Pharmacist Assistant">Pharmacist Assistant</option>
-
                           </select>
                         </div>
                     </div>
