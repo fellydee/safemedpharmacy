@@ -196,6 +196,7 @@ if(!$_SESSION['username']) {
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
+					<?php if( $login_type != 'Owner' ): ?>
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Point of Sale</h1>
 					</div>
@@ -276,13 +277,13 @@ if(!$_SESSION['username']) {
 									</div>
 								</div>
 							</div>
-
+							<?php endif; ?>
 						</div>
 						<!-- End of Main Content -->
 
 						<hr class="pos-operator" />
 
-						<?php if($login_type != "Super Admin") {
+						<?php if($login_type != "Super Admin" && $login_type != "Owner") {
 							echo "<style> .container-fluid.sales-inv, .pos-operator { display: none; } </style>"; 
 						}
 
