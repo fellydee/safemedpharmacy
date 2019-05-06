@@ -13,7 +13,7 @@
         $name = $_SESSION['name'];
         $login_type = $_SESSION['login_type'];
 
-        if($login_type != "Super Admin" and $login_type != "Admin") {
+        if($login_type != "Super Admin") {
           header("Location: index.php");
         }
     }
@@ -98,6 +98,7 @@
                           <label>User Type</label>
                           <!-- <input type="text" class="form-control" name="category" value=""> -->
                           <select class="form-control" name="login_type">
+                            <option value="Owner">Super Admin</option>
                             <option value="Owner">Owner</option>
                             <option value="Admin">Admin</option>
                             <option value="Pharmacist Assistant">Pharmacist Assistant</option>
