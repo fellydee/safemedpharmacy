@@ -281,7 +281,7 @@
                       <td><?php echo $row['expiration_date']; ?></td>
                       <td><?php echo $row['added_by']; ?></td>
                       <td><?php echo $row['date_added']; ?></td>      
-                      <td><center>
+                       <td class="control">
                         <form class="form control_button" action="edit-inventory.php?id=<?php echo $row['item_id']; ?>" method="post">
                           <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit fa-sm text-white-50"></i> Edit</button>
                           <input type= "hidden" name = "item_id" value ="<?php echo $row['item_id']; ?>"/>

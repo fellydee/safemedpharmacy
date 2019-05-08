@@ -72,3 +72,7 @@
     display: block!important;
     margin-top: 15px;
 }
+
+.owner .control { 
+        display: none!important;
+}

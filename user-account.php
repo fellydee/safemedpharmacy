@@ -336,7 +336,20 @@
               },
               {
                   extend: 'pdfHtml5',
-                   customize: function ( doc ) {
+                  customize: function ( doc ) {
+                   // Create a footer
+                  doc['footer']=(function(page, pages) {
+                  return {
+                      columns: [
+                          {
+                              // This is the right column
+                              alignment: 'right',
+                              text: ['Signature of Employee \n\n\n ____________________ \n\n Juan Dela Cruz']
+                          }
+                      ],
+                      margin: [75, -100]
+                  }
+              });
                     doc.content.splice( 1, 0, {
                         margin: [ 0, 0, 0, 12 ],
                         alignment: 'center',
