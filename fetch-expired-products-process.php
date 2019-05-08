@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $expiredData = array();
 $is_expired = false;

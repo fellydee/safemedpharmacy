@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $salesData = array();
 $is_sold = false;

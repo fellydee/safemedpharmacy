@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $name = $_POST['name'];
 $item_id = $_POST['item_id'];

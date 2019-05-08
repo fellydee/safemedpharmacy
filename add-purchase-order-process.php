@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $name = $_SESSION['name'];
 $name = mysqli_real_escape_string($connect,$_POST['name']);
