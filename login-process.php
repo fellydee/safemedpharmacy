@@ -3,7 +3,7 @@
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
-$connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
+include('connect.php');
 
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);

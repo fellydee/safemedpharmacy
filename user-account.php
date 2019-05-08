@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    $connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
+    include('connect.php');
     session_start();
     if(!$_SESSION['username']) {
         header("Location: login.php");

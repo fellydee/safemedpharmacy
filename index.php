@@ -4,7 +4,7 @@
 <?php
 session_start();
 
-$connect = mysqli_connect('localhost', 'root', '', 'safemedpharmacy');
+include('connect.php');
 $is_admin = false;
 $body_class = '';
 
