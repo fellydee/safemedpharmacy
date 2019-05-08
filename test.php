@@ -5,6 +5,6 @@
 	<title>Test</title>
 </head>
 <body>
-	Test
+	Test2
 </body>
 </html>
