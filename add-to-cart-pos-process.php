@@ -2,7 +2,7 @@
 
 session_start();
 
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $item_id = mysqli_real_escape_string($connect,$_POST['item_id']);
 $sku = mysqli_real_escape_string($connect,$_POST['sku']);

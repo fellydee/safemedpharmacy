@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 
 $name = mysqli_real_escape_string($connect,$_POST['name']);
 $login_type = mysqli_real_escape_string($connect,$_POST['login_type']);

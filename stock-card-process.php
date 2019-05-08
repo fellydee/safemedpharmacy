@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connect = mysqli_connect('localhost','root','','safemedpharmacy');
+include('connect.php');
 $_SESSION['productFound'] = false;
 
 if(!$_SESSION['username']) {
