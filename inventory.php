@@ -163,8 +163,8 @@
   <?php include('head-actions.php'); ?>
 </head>
 
-<body id="page-top">
-
+<body id="page-top" <?php echo 'class="' . $body_class . '"'; ?>>
+ 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -234,7 +234,7 @@
                       <th>Expiration Date</th>
                       <th>Added By</th>
                       <th>Date Added</th>
-                      <th>Controls</th>
+                      <th class="control">Controls</th>
                     </tr>
                   </thead>
                   <tbody>

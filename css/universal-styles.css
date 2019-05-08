@@ -7,72 +7,71 @@
 }
 
 .purchase-order-table th:last-child {
-    min-width: 126px;
+	min-width: 126px;
 }
 
 .page-item.active .page-link,
 .dt-buttons button,
 .btn-primary {
-    background-color: #4b9b22;
-    border-color: #4b9b22;
+	background-color: #4b9b22;
+	border-color: #4b9b22;
 }
 
 .page-item.active .page-link:hover,
 .dt-buttons button:hover,
 .btn-primary:hover {
-    background-color: #65B53C;
-    border-color: #65B53C;
+	background-color: #65B53C;
+	border-color: #65B53C;
 }
 
 .bg-primary {
-    background-color: #4b9b22 !important;
+	background-color: #4b9b22 !important;
 }
 
 /* Buttons */
 .btn-primary:not(:disabled):not(.disabled):active {
-    background-color: #65B53C;
-    border-color: #65B53C;
+	background-color: #65B53C;
+	border-color: #65B53C;
 }
 
 /* Sidebar, Text */
 .sidebar .nav-item .collapse .collapse-inner .collapse-item.active,
 .sidebar .nav-item .collapsing .collapse-inner .collapse-item.active,
 .text-primary {
-    color: #4b9b22!important;
+	color: #4b9b22!important;
 }
 
 /* Login page */
 .bg-gradient-primary.login {
-    background: rgb(75,155,34);
-    background: linear-gradient(180deg, rgba(75,155,34,1) 0%, rgba(255,255,255,1) 100%);
+	background: rgb(75,155,34);
+	background: linear-gradient(180deg, rgba(75,155,34,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .justify-content-center {
-/*.container {*/
-    height: 100vh;
+	height: 100vh;
 }
 
 .justify-content-center {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .login-form {
-    padding-top: 0!important;
+	padding-top: 0!important;
 }
 
 .login-logo {
-    display: block;
-    margin: 0 auto;
-    margin-top: 15px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
 }
 
 /* Conditional input field based on checkbox */
 #medicine-check:checked + #move-po-expiration-date {
-    display: block!important;
-    margin-top: 15px;
+	display: block!important;
+	margin-top: 15px;
 }
 
 .owner .control { 
-        display: none!important;
+	display: none;
 }

@@ -205,7 +205,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 	<?php include('head-actions.php'); ?>
 </head>
 
-<body id="page-top">
+<body id="page-top" <?php echo 'class="' . $body_class . '"'; ?>>
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -282,7 +282,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 										<th width="20%">Brand Name</th>
 										<th width="20%">Generic Name</th>
 										<th width="5%">Status</th>
-										<th width="20%">Controls</th>
+										<th class="control" width="20%">Controls</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -305,7 +305,7 @@ if ( isset($_SESSION['result']['SKU']) ) {
 											<td><?php echo $row['status']; ?></td>
 
 
-											<td><center>
+											<td class="control"><center>
 												<form method = "POST" class="form control_button" action ="move-purchase-order.php">
 													<input type= "hidden" name = "sku" value ="<?php echo $row['sku']; ?>"/>
 													<input type= "hidden" name = "ref_num" value ="<?php echo $row['ref_num']; ?>"/>

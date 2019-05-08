@@ -167,7 +167,7 @@
   <?php include('head-actions.php'); ?>
 </head>
 
-<body id="page-top">
+<body id="page-top" <?php echo 'class="' . $body_class . '"'; ?>>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -227,7 +227,7 @@
                       <th width="20%">Username</th>
                       <th width="20%">Employee Name</th>
                       <th width="20%">User Type</th>                        
-                      <th width="15%" class="controls">Controls</th>
+                      <th width="15%" class="controls control">Controls</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -243,7 +243,7 @@
                       <td><?php echo $row['username']; ?></td>
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['login_type']; ?></td>
-                      <td class="controls"><center>
+                      <td class="controls control"><center>
                         <form class="form control_button" action="edit-user-account.php?id=<?php echo $row['id']; ?>" method="post">
                           <button type="submit" id="submit" name="edit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit fa-sm text-white-50"></i> Edit</button>
                           <input type= "hidden" name = "id" value ="<?php echo $row['id']; ?>"/>
