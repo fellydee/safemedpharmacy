@@ -1,8 +1,10 @@
 # SafeMedPharmacy
 
-Insert project description here...
+The SafeMedPharmacy app is an inventory management system created using PHP.
 
-## Download and Installation (as a groupmate/contributor)
+<img src="https://i.imgur.com/q1WHBX7.png" alt="">
+
+## Download and Installation (as a contributor)
 
 - Make sure you have git installed [(follow the guide here)](https://www.atlassian.com/git/tutorials/install-git#windows)
 - Navigate to your home directory (`www` folder if you're using WAMP, `htdocs` if you're using XAMP)
